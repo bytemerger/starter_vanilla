@@ -19,6 +19,10 @@ module.exports = {
                         outputPath: "static/images"
                     }
                 }
+            },
+            {
+                test: /\.njk$/,
+                use:["nunjucks-loader"]
             }
         ]
     }
