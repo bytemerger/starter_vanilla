@@ -1,0 +1,42 @@
+<div class="edit-header-container">
+        <div class="container">
+            <div class="header row">
+                <div class="col-medium-8 hidden-small">
+                    <div>
+                        <h2 class="edit-header-title">Drop images of logos, websites, or mobile apps you like.</h2>
+                        <p class="text edit-title-text">When you're finished adding images, click <a href="#" class="goToview" data-board="{{result.id}}">save & publish.</a></p>
+                    </div>
+                </div>
+                <div class="col-medium-4 col-small-10">
+                    <a href="" class="goToview" data-board="{{result.id}}"><button class="btn edit-btn">Save & publish</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="upload upload-area">
+            <div class="flex-column upload-text">
+                <img src="https://img.icons8.com/ios/40/000000/upload-to-cloud.png"/>
+                Drag your images here to upload
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="masonry edit">
+            {% for image in result.images %}
+                <div class="item edit-image">
+                    <a href="" class="no-underline close grid-image-delete js-image-delete" data-id="{{image.id}}">×</a>
+                    <div class="board-pic">
+                        <a href=""><img src="{{image.src}}" class="responsive-img"/></a>
+                    </div>
+                </div>
+            {% else %}
+              <li>This would display if the 'item' collection were empty</li>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container space-top-3 space-bottom-2">
+        <div class="header-index-name text-align-center" id="home-page" style="cursor:pointer">
+            Moodboard
+        </div>
+    </div>
