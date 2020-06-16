@@ -1,5 +1,5 @@
 import {homepage} from "./home";
-
+import {edit} from "./edit"
 const view_temp = require('../views/view.njk');
 import {getBoard} from "../api/Boards";
 
@@ -13,10 +13,10 @@ function view(id){
         document.getElementById('home-page').addEventListener('click',()=> {
             homepage();
         });
-        document.getElementById('goToEdit').addEventListener('click',()=> {
-            edit();
+        document.getElementById('goToEdit').addEventListener('click',(e)=> {
+            id = e.target.dataset.board;
+            edit(id);
         })
     };
-    return id;
 }
 export {view}
