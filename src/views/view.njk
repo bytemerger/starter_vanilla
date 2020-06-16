@@ -1,0 +1,31 @@
+<div class="container">
+        <div class="row view-header">
+            <div class="header-index-name col-medium-9 col-small-12" id="home-page">Moodboard</div>
+            <div class="col-medium-3 col-small-12 view-header-btn view-header">
+                <a href="edit.html"><button class="btn edit" id="goToEdit">Edit Moodboard</button></a>
+            </div>
+        </div>
+        <div class="view-middle-text">
+            Note: all moodboards are private by default. Share the link to make public.
+        </div>
+    </div>
+    <div class="container">
+        <div class="masonry">
+            {% for image in result.images %}
+                <div class="item {% if image.comment %}
+                                   comment-view
+                                 {% endif %}">
+                    <div class="board-pic">
+                        <img src="{{image.src}}" class="responsive-img"/>
+                    </div>
+                    <div class="box stack-top">
+                        {% if image.comment %}
+                           {{image.comment}}
+                         {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <li>This would display if the 'item' collection were empty</li>
+            {% endfor %}
+        </div>
+    </div>
