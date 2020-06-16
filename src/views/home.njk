@@ -24,10 +24,12 @@
                 </div>
             </div>
             {% for board in result %}
-              <div class="col-medium-4 col-small-6 flex-column">
+              <div class="col-medium-4 col-small-6">
+              <a data-id = "{{board.id}}" class="board-button">
                   <img src="{{board.show_pic.src}}" class="responsive-img index-img">
-                  <div>
-                      {{board.name}}
+                  </a>
+                  <div style="text-align:center">
+                      {{board.title}}
                   </div>
               </div>
             {% else %}
