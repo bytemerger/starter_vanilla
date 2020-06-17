@@ -1,11 +1,12 @@
-const getBoards=()=>{
-    return fetch('http://localhost:8080/boards',{
-        method:"GET",
+const baseUrl = 'http://localhost:8081'
+const getBoards= async () => {
+    return await fetch(baseUrl+'/boards', {
+        method: "GET",
     })
         .then((response) => response.json())
 }
 const getBoard =(id)=> {
-    let url = 'http://localhost:8080/boards/' + id;
+    let url = baseUrl+'/boards/' + id;
     return fetch(url, {
         method: "GET",
     })
@@ -13,7 +14,7 @@ const getBoard =(id)=> {
 
 }
 const createBoard=(name)=>{
-    let url = 'http://localhost:8080/boards'
+    let url = baseUrl+'/boards'
     let data = {
         "name": name
     }

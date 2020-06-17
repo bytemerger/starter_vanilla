@@ -32,6 +32,7 @@ export function edit(id) {
             }))
         )
         uploadImage(data.id)
+
     }
 }
 function deleteImg(id,image)
@@ -127,8 +128,10 @@ function uploadImage(id)
         div.className = 'item edit-image'
         div.innerHTML = `<a href="#" role="button" class="no-underline close grid-image-delete js-image-delete" data-id="${data.id}">×</a>
                 <div class="board-pic">
-                    <a href="${'/images/'+data.id+'/comment'}"><img src=${data.src} class="responsive-img"/></a>
+                    <a href="" data-id="${data.id}" class="img-view"><img src=${data.src} class="responsive-img"/></a>
                 </div>`
         container.prepend(div)
+        document.getElementById("doesNot").style.display='none';
+
     }
 }
