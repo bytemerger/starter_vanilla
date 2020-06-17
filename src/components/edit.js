@@ -1,6 +1,7 @@
 import {getBoard} from "../api/Boards";
 import {view} from "../components/view"
 import {homepage} from "./home";
+import {comment} from "./comment";
 import {deleteImage} from "../api/Images";
 const edit_temp = require('../views/edit.njk');
 export function edit(id) {
@@ -22,6 +23,12 @@ export function edit(id) {
             element.addEventListener('click', (e)=> {
                 e.preventDefault();
                 view(element.dataset.board)
+            }))
+        )
+        document.querySelectorAll(".img-view").forEach((element) => (
+            element.addEventListener('click', (e)=> {
+                e.preventDefault();
+                comment(element.dataset.id)
             }))
         )
         uploadImage(data.id)

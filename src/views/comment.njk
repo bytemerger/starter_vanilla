@@ -1,0 +1,21 @@
+<div class="container">
+        <div class="flex">
+            <div class="header-index-name" id="home-page">Moodboard</div>
+            <div class="header-right">
+                <a href="" id="goToEdit" data-board="{{result.id}}"><img src="{{back_img}}" width="30" height="30"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-medium-6 col-small-10">
+                <img src="{{result.src}}" class="responsive-img"/>
+            </div>
+            <div class="col-medium-6 col-small-10 flex-column">
+                <textarea class="comment-textarea">
+                    {% if result.comment %}
+                      {{result.comment}}
+                    {% endif %}
+                </textarea>
+                <div><button class="btn save" id="save-comment" data-id="{{result.id}}">Save</button></div>
+            </div>
+        </div>
+ </div>
